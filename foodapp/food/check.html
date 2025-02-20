@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+
+    <!-- Bootstrap CSS -->
+    
+    <!-- Tailwind CSS -->
+
+    <style>
+        /* Add a few custom styles to make the nav responsive */
+
+
+
+
+
+
+
+
+
+.dropdown-menu {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.first-item img {
+    margin-right: 10px;
+}
+
+
+        .error {
+            color: red;
+            font-size: 14px;
+            visibility: hidden;
+        }
+        .show {
+            visibility: visible;
+        }
+        .hidden {
+            display: none;
+        }
+        .containerfrom {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #f8e6e6;
+            border-radius: 5px;
+
+            background-color: #f9f9f9;
+        }
+        #upiScanner {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+<link rel="stylesheet" href="style.css">
+<link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css " rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href=" https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css "  rel="stylesheet">
+
+</head>
+<body>
+    <nav class="bg-yellow-400 fixed w-full shadow-md  flex items-center justify-between px-3 z-50  py-3">
+        
+        <!-- Logo (Centered) -->
+     
+
+        <!-- Mobile & Desktop Menu -->
+        <ul class="flex justify-between items-center w-full ">
+            <!-- Logo (Left Side) -->
+            <div class="flex items-center  w-20 h-10 ">
+
+                <a href="next.html" class="flex items-center justify-center">
+                    <img src="Screenshot 2025-02-20 105303.png" class=" flex h-12 w-20">
+                </a>
+                   
+                <!-- Location -->
+            </div>
+            <!-- Navigation Items (Right Side) -->
+            <div class="flex items-center gap-6">
+                <li>
+                    <a href="next.html" class="font-bold text-lg transition-colors duration-300 hover:text-red-500 mr-2">Home</a>
+                </li>
+        
+                <!-- Cart -->
+                <li class="flex items-center">
+                    <a href="ser.html" class="flex items-center">
+                        <img src="https://cdn2.iconfinder.com/data/icons/actinia-basic-user-interface/24/archive-delete-1024.png" class="h-6">
+                        <span class="ml-1 font-bold text-lg hidden md:inline transition-colors duration-300 hover:text-red-500">Cart</span>
+                    </a>
+                </li>
+            </div>
+        </ul>
+        
+        
+
+</nav>
+
+
+    <header class="relative w-full bg-cover bg-center text-white flex justify-center items-center" style="height: 400px; background-image: url('https://fascinatingfoodie.wordpress.com/wp-content/uploads/2018/05/dsc_0498.jpg?w=1000');">
+        <h1 class="text-3xl font-bold">Check Out</h1>
+    </header>
+<div class="containerfrom max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+
+    <h2 class="text-4xl font-bold text-center text-red-400 mb-6">Checkout Form</h2>
+    
+    <!-- Form -->
+    <form id="checkoutForm">
+        <!-- Name -->
+        <div class="mb-4">
+            <label for="name" class="form-label text-xl font-semibold block text-pink-500 ">Full Name</label>
+            <input type="text" id="name" class="w-full p-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" placeholder="Enter your full name">
+            <div id="nameError" class="error">Name is required.</div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+            <label for="email" class="form-label  text-xl font-bold text-pink-500">Email</label>
+            <input type="email" id="email" class="w-full p-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" placeholder="Enter your email">
+            <div id="emailError" class="error">Invalid email format.</div>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-4">
+            <label for="phone" class="form-label  text-xl font-bold text-pink-500">Phone Number</label>
+            <input type="tel" id="phone" class="w-full p-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" placeholder="Enter your phone number">
+            <div id="phoneError" class="error">Enter a valid 10-digit phone number.</div>
+        </div>
+
+        <!-- Country -->
+        <div class="mb-3"> 
+            <label for="country" class="form-label  text-xl font-bold text-pink-500">Country</label>
+            <input type="text" id="country" class="w-full p-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" placeholder="Enter your country">
+            <div id="countryError" class="error">Country is required.</div>
+        </div>
+</form>
+      <!-- Payment Method -->
+      <p class="text-green-900 font-extrabold text-2xl mb-6">Payment Summary</p>
+
+<!-- Display the total amount from the first page -->
+<p class="text-yellow-900 text-lg mb-2">Order Total: ₹<span id="orderTotal" class="font-semibold text-xl"></span></p>
+
+<!-- Delivery charge -->
+<p class="text-yellow-700 text-lg mb-4">Delivery Charge: ₹<span id="deliveryCharge" class="font-semibold text-xl"></span></p>
+
+<!-- Payment method section -->
+<div class="p-2 bg-white rounded-lg shadow-lg space-y-1 max-w-xl m">
+    <!-- Payment Method Title -->
+    <p class="text-xl font-semibold mb-4 text-center">Select Payment Method:</p>
+
+    <!-- Payment Methods with Icons and Styling -->
+    <div class="gap-2 flex justify-center  pr-3">
+        <!-- Cash Option with logo -->
+        <label class="inline-flex items-center cursor-pointer space-x-2 p-2">
+            <input type="radio" name="paymentMethod" value="cash" id="cashPayment" onchange="updateFinalAmount()" class="form-radio text-green-600 focus:ring-2 focus:ring-green-400">
+            <span class="text-gray-700 text-medium flex items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/9198/9198191.png" alt="Cash" class="w-10 h-10 mr-2"> <!-- Replace with your logo -->
+                Cash on Delivery
+            </span>
+        </label>
+
+        <!-- Credit/Debit Card Option with logo -->
+        <label class="inline-flex items-center cursor-pointer space-x-2 p-2">
+            <input type="radio" name="paymentMethod" value="card" id="cardPayment" onchange="updateFinalAmount()" class="form-radio text-blue-600 focus:ring-2 focus:ring-blue-400">
+            <span class="text-gray-700 text-medium flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQttfDaXuafMko9iHpyP5d6d0JdEQf6WJt5_w&s" alt="Card" class="w-10 h-10 mr-2"> <!-- Replace with your logo -->
+                Credit /Debit Card
+            </span>
+        </label>
+
+        <!-- UPI Option with logo -->
+        <label class="inline-flex items-center cursor-pointer space-x-2 p-2 mr-1">
+            <input type="radio" name="paymentMethod" value="upi" id="upiPayment" onchange="updateFinalAmount()" class="form-radio text-purple-600 focus:ring-2 focus:ring-purple-400">
+            <span class="text-gray-700 text-medium flex items-center">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-upi-logo-icon-download-in-svg-png-gif-file-formats--unified-payments-interface-payment-money-transfer-logos-icons-1747946.png?f=webp" alt="UPI" class="w-10 h-20 mr-2"> <!-- Replace with your logo -->
+                UPI
+            </span>
+        </label>
+    </div>
+</div>
+
+
+<!-- Payment options -->
+<div id="cardPaymentDetails" style="display: none;" class="border-green-400 bg-green-400 pl-2 pr-2 pt-4 pb-4 rounded-lg">
+    <p>Please enter your credit/debit card details:</p>
+    <label for="cardNumber">Card Number</label>
+    <input type="text" id="cardNumber" placeholder="Card Number" required><br><br>
+    
+    <label for="cardExpiry">Expiry Date</label>
+    <input type="text" id="cardExpiry" placeholder="MM/YY" required><br><br>
+    
+    <label for="cardCVV">CVV</label>
+    <input type="text" id="cardCVV" placeholder="CVV" required><br><br>
+    
+    <button type="button" onclick="submitCardPayment()" class="button bg-yellow-400 rounded-lg pl-4 pr-4 pt-2 pb-2 font-bold">Submit </button>
+</div>
+
+<!-- UPI Payment -->
+<div id="upiPaymentDetails" style="display: none;">
+    <p>Please scan the QR code to complete your UPI payment:</p>
+    <button type="button" onclick="openScanner()">Scan UPI QR</button>
+</div>
+
+<!-- Final price -->
+<p><strong>Total Price to Pay: ₹<span id="finalAmount"></span></strong></p>
+
+<!-- Proceed to payment -->
+<button type="button" id="proceedButton" class="btn bg-yellow-500" onclick="processPayment()" disabled>Proceed to Pay</button>
+
+        <script>
+           // Extract totalPrice from URL
+const urlParams = new URLSearchParams(window.location.search);
+const totalPrice = parseFloat(urlParams.get('totalPrice')); // Get price from query string
+
+// If no price found, redirect to the first page
+
+
+// Default delivery charge
+const deliveryCharge = 10;
+let extraCharge = 0;
+let finalAmount = totalPrice + deliveryCharge;
+
+// Display initial values
+document.getElementById('orderTotal').textContent = totalPrice.toFixed(2);
+document.getElementById('deliveryCharge').textContent = deliveryCharge.toFixed(2);
+document.getElementById('finalAmount').textContent = finalAmount.toFixed(2);
+
+// Disable Proceed Button Initially
+const proceedButton = document.getElementById('proceedButton');
+proceedButton.disabled = true;
+
+// Function to update final amount when payment method changes
+function updateFinalAmount() {
+    extraCharge = 0; // Reset extra charge
+
+    // Check if Cash on Delivery is selected
+    if (document.getElementById('cashPayment').checked) {
+        extraCharge = 0; // No additional charge for COD
+        document.getElementById('cardPaymentDetails').style.display = 'none';
+        document.getElementById('upiPaymentDetails').style.display = 'none';
+    } else {
+        document.getElementById('cardPaymentDetails').style.display = document.getElementById('cardPayment').checked ? 'block' : 'none';
+        document.getElementById('upiPaymentDetails').style.display = document.getElementById('upiPayment').checked ? 'block' : 'none';
+    }
+
+    // Calculate final amount
+    finalAmount = totalPrice + deliveryCharge + extraCharge;
+    document.getElementById('finalAmount').textContent = finalAmount.toFixed(2);
+
+    // Validate form
+    validateForm();
+}
+
+// Add event listeners to payment method radio buttons
+document.querySelectorAll('input[name="paymentMethod"]').forEach((input) => {
+    input.addEventListener("change", updateFinalAmount);
+});
+
+// Form Validation function
+function validateForm() {
+    let isValid = true;
+
+    let errorMessages = document.querySelectorAll('.error');
+    errorMessages.forEach(error => error.classList.remove("show"));
+
+    // Name validation
+    let name = document.getElementById("name").value.trim();
+    let namePattern = /^[A-Za-z]{2,}(\s[A-Za-z]{2,})+$/;
+    let nameError = document.getElementById("nameError");
+
+    if (!namePattern.test(name)) {
+        nameError.classList.add("show");
+        nameError.textContent = "Enter a valid full name (First and Last name required).";
+        isValid = false;
+    }
+
+    // Email validation
+    let email = document.getElementById("email").value.trim();
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailError = document.getElementById("emailError");
+
+    if (!emailPattern.test(email)) {
+        emailError.classList.add("show");
+        isValid = false;
+    }
+
+    // Phone validation
+    let phone = document.getElementById("phone").value.trim();
+    let phonePattern = /^[6-9]\d{9}$/;
+    let phoneError = document.getElementById("phoneError");
+
+    if (!phonePattern.test(phone)) {
+        phoneError.classList.add("show");
+        isValid = false;
+    }
+
+    // Country validation
+    let country = document.getElementById("country").value.trim();
+    let countryPattern = /^[A-Za-z\s]+$/;
+    let countryError = document.getElementById("countryError");
+
+    if (!countryPattern.test(country) || country.length < 3) {
+        countryError.classList.add("show");
+        countryError.textContent = "Enter a valid country name.";
+        isValid = false;
+    }
+
+    // Payment Method validation
+    let selectedPayment = document.querySelector('input[name="paymentMethod"]:checked');
+    if (!selectedPayment) {
+        isValid = false;
+    }
+
+    // Enable or disable the button based on validation
+    proceedButton.disabled = !isValid;
+
+    return isValid;
+}
+
+// Attach validation to input fields to enable the button when errors are fixed
+document.querySelectorAll("input, select").forEach(input => {
+    input.addEventListener("input", validateForm);
+});
+
+// Process Order Based on Payment Method
+proceedButton.addEventListener("click", function () {
+    if (validateForm()) {
+        let selectedPayment = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        if (selectedPayment === "cash") {
+            // For Cash on Delivery, skip payment process and directly confirm the order
+            alert("Order Confirmed!");
+            window.location.href = "next.html"; // Redirect for Cash on Delivery
+        } else {
+            // For UPI or Card payments, simulate payment processing
+            alert("Processing Payment...");
+            processPayment(selectedPayment); // Process for UPI/Card payments
+        }
+    } else {
+        alert("Please correct the errors in the form.");
+    }
+});
+
+// Process Payment (Mock Function for UPI/Card)
+function processPayment(paymentMethod) {
+    if (paymentMethod === "card") {
+        submitCardPayment();
+    } else if (paymentMethod === "upi") {
+        openScanner();
+    }
+}
+
+// Submit Card Payment
+function submitCardPayment() {
+    const cardNumber = document.getElementById('cardNumber').value;
+    const cardExpiry = document.getElementById('cardExpiry').value;
+    const cardCVV = document.getElementById('cardCVV').value;
+
+    if (cardNumber && cardExpiry && cardCVV) {
+        alert("Card payment successful! Proceeding...");
+        setTimeout(() => {
+            alert("Payment Done!");
+            window.location.href = "thankYouPage.html"; // Redirect after successful payment
+        }, 1000); // Delay for simulation
+    } else {
+        alert("Please fill in all card details.");
+    }
+}
+
+// Open Scanner for UPI Payment (Mock)
+function openScanner() {
+    alert("Open UPI Scanner to complete payment.");
+    setTimeout(() => {
+        alert("Payment Done!");
+        window.location.href = "thankYouPage.html"; // Redirect after successful payment
+    }, 1000); // Simulate payment delay
+}
+
+
+</script>
+    </div>
+    
+<footer class="flex justify-center items-center py-2 bg-red-800 text-white w-full">
+    <div id="last" class="text-center">
+        <img src="Screenshot 2024-07-28 181139.png" class="mx-auto align-center" height="50px" width="100px" alt="Screenshot">
+        <p class="mt-2">The key to more success is to have a lot of pillows. Always remember it's the jungle there's a lot of 'they' in there. After you overcome 'they' you will make it to paradise.</p>
+    </div>
+    </footer>
+<script src="script.js"></script>
+
+</body>
+</html>

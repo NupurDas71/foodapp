@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasta - Food App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+</head>
+<body class="bg-red-100">
+
+  <!-- Navbar -->
+ <!-- Navbar -->
+ <header class="bg-yellow-500 p-4 shadow-md">
+  <div class=" mx-auto flex justify-between items-center">
+
+      <a href="next.html" class="flex items-center justify-center">
+          <img src="Screenshot 2025-02-20 105303.png" class=" flex w-20">
+      </a>
+         
+      <!-- Location -->
+      <a href="next.html" class="text-white hover:underline">Categories</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-6">
+    <h1 class="text-3xl font-bold text-center text-red-800 mb-6">🍝 Pasta Menu</h1>
+
+    <!-- Pasta Items Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Alfredo Pasta -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TY78rA8L0CC_LPka0MHsYfqpaiDG5lUGJA&s" 
+             alt="Alfredo Pasta" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Creamy Pasta</h2>
+        <p class="text-gray-600 text-sm">Classic white sauce with parmesan cheese.</p>
+        <p class="mt-2 text-lg font-semibold text-red-800">₹180.00</p>
+        <p class="text-red-500 text-sm">⭐ 4.9 | 420+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-red-400 transition-all" 
+                onclick="proceedToPay(180)">Order Now</button>
+                <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Creafy Pasta',180 )">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+    
+      <!-- Pesto Pasta -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV_2M64Vma7G1WFB41hLqYgT0eorRlCOP7TQ&s" 
+             alt="Pesto Pasta" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Pesto Pasta</h2>
+        <p class="text-gray-600 text-sm">Fresh basil pesto with parmesan.</p>
+        <p class="mt-2 text-lg font-semibold text-red-800">₹170.00</p>
+        <p class="text-red-500 text-sm">⭐ 4.7 | 350+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-red-400 transition-all" 
+                onclick="proceedToPay(170)">Order Now</button>
+                <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Pesto Pasta',170 )">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+      <!-- Mac and Cheese -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDd92rfM8vAljBlquu7xYsOoywAlK7jqW0fw&s" 
+             alt="Mac and Cheese" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Mac and Cheese</h2>
+        <p class="text-gray-600 text-sm">Creamy cheesy goodness in every bite.</p>
+        <p class="mt-2 text-lg font-semibold text-red-800">₹150.00</p>
+        <p class="text-red-500 text-sm">⭐ 4.9 | 430+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-red-400 transition-all" 
+                onclick="proceedToPay(150)">Order Now</button>
+                <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Mae & Cheese',150 )">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+      <!-- Garlic Butter Pasta -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://www.whiskaffair.com/wp-content/uploads/2021/05/White-Sauce-Paste-2-3.jpg" 
+             alt="White Sauce Pasta" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Garlic Butter Pasta</h2>
+        <p class="text-gray-600 text-sm">Simple yet flavorful garlic-infused pasta.</p>
+        <p class="mt-2 text-lg font-semibold text-red-800">₹140.00</p>
+        <p class="text-red-500 text-sm">⭐ 4.6 | 300+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-red-400 transition-all" 
+                onclick="proceedToPay(140)">Order Now</button>
+                <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Garlic Butter Pasta', 140)">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+      <!-- Cheesy Tomato Pasta -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsXinEt7-Fq1fAYuMiIV_vtvVClOQU2d-Myw&s" 
+             alt="Cheesy Tomato Pasta" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Cheesy Tomato Pasta</h2>
+        <p class="text-gray-600 text-sm">Tangy tomato sauce with melted cheese.</p>
+        <p class="mt-2 text-lg font-semibold text-red-800">₹155.00</p>
+        <p class="text-red-500 text-sm">⭐ 4.8 | 370+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-red-400 transition-all" 
+                onclick="proceedToPay(155)">Order Now</button>
+                <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Cheesy Tomato Pasta', 155)">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="flex justify-center items-center py-2 bg-red-800 text-white w-full">
+    <div id="last" class="text-center">
+        <img src="Screenshot 2025-02-20 105303.png" class="mx-auto align-center" height="50px" width="100px" alt="Screenshot">
+        <p class="mt-2">The key to more success is to have a lot of pillows. Always remember it's the jungle there's a lot of 'they' in there. After you overcome 'they' you will make it to paradise.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinese - Food App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="bg-yellow-500 p-4 shadow-md">
+    <div class=" mx-auto flex justify-between items-center">
+
+        <a href="next.html" class="flex items-center justify-center">
+            <img src="Screenshot 2025-02-20 105303.png" class=" flex w-20">
+        </a>
+           
+        <!-- Location -->
+        <a href="next.html" class="text-white hover:underline">Categories</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-6">
+    <h1 class="text-3xl font-bold text-center text-red-600 mb-6">🥡 Chinese Cuisine</h1>
+
+    <!-- Chinese Food Items Grid -->
+    <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+      <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-xl transition-all">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kSQ_V8xhlA9H27tp-LCFgPJxgL6-bbh2vA&s" 
+             alt="Hakka Noodles" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Hakka Noodles</h2>
+        <p class="text-gray-600 text-sm">Stir-fried noodles with fresh veggies and soy sauce.</p>
+        <p class="mt-2 text-lg font-semibold text-red-700">₹150.00</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.6 | 250+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+                onclick="proceedToPay(150)">Order Now</button>
+                <button class="bg-red-700 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Hakka Noodles',150)">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+      <!-- Manchurian -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://holycowvegan.net/wp-content/uploads/2020/03/veg-manchurian-7.jpg" 
+             alt="Manchurian" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Veg Manchurian</h2>
+        <p class="text-gray-600 text-sm">Crispy veggie balls tossed in spicy Manchurian sauce.</p>
+        <p class="mt-2 text-lg font-semibold text-red-700">₹180.00</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.5 | 220+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+                onclick="proceedToPay(180)">Order Now</button>
+                <button class="bg-red-700 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Veg Manchurian',180)">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+      <!-- Hakka Noodles -->
+    
+
+      <!-- Chilli Paneer -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://www.cookclickndevour.com/wp-content/uploads/2016/05/chilli-paneer-recipe-3.jpg" 
+             alt="Chilli Paneer" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Chilli Paneer</h2>
+        <p class="text-gray-600 text-sm">Crispy paneer tossed in spicy chilli sauce.</p>
+        <p class="mt-2 text-lg font-semibold text-red-700">₹200.00</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.7 | 280+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+                onclick="proceedToPay(200)">Order Now</button>
+                <button class="bg-red-700 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Chilli Paneer',200)">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+      <!-- Fried Rice -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://shwetainthekitchen.com/wp-content/uploads/2023/06/veg-fried-rice.jpg" 
+             alt="Fried Rice" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Veg Fried Rice</h2>
+        <p class="text-gray-600 text-sm">Flavored rice with fresh veggies and soya sauce.</p>
+        <p class="mt-2 text-lg font-semibold text-red-700">₹130.00</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.4 | 190+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+                onclick="proceedToPay(130)">Order Now</button>
+                <button class="bg-red-700 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+                onclick="addToCart('Veg Fried Rice',130)">Add to Cart</button>
+                <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                      ✔️ Item Added to Cart Successfully
+                  </h2>
+              </div>
+      
+              <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                  <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                      ❌ Item Removed from Cart
+                  </h2>
+      </div>
+      </div>
+
+      <!-- Spring Rolls -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://s.lightorangebean.com/media/20240914144947/Thai-Veggie-Spring-Rolls_done.png" 
+             alt="Spring Rolls" 
+             class="w-full h-40 object-cover rounded-md">
+        <h2 class="mt-3 text-xl font-semibold">Spring Rolls</h2>
+        <p class="text-gray-600 text-sm">Crispy rolls stuffed with veggies & noodles.</p>
+        <p class="mt-2 text-lg font-semibold text-red-700">₹120.00</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.3 | 170+ Reviews</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+                onclick="proceedToPay(120)">Order Now</button>
+                <button class="bg-red-700 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all"  onclick="addToCart('Spring Rolls',120)">Add to Cart</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="flex justify-center items-center py-2 bg-red-800 text-white w-full">
+    <div id="last" class="text-center">
+        <img src="Screenshot 2025-02-20 105303.png" class="mx-auto align-center" height="50px" width="100px" alt="Screenshot">
+        <p class="mt-2">The key to more success is to have a lot of pillows. Always remember it's the jungle there's a lot of 'they' in there. After you overcome 'they' you will make it to paradise.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

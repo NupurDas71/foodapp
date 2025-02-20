@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>South Indian - Food App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header / Navbar -->
+  <header class=" bg-yellow-500 p-4  top-0 z-10">
+    <div class="  mx-auto flex justify-between items-center">
+      <div class="flex items-center  w-20 h-10 ">
+
+        <a href="next.html" class="flex items-center justify-center">
+            <img src="Screenshot 2025-02-20 105303.png" class=" flex w-20">
+        </a>
+           
+        <!-- Location -->
+    </div>      <nav>
+        <a href="next.html" class="text-white hover:underline text-lg font-semibold">Categories</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 p-4">
+    <h1 class="text-4xl font-bold text-center mb-6 text-green-700">South Indian Delights</h1>
+    
+    <!-- Food Items Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Dosa -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ911oUizDnzfAfLBf_yLDSIzSnUTFzFj23mp1EHetDVP-q0RtS1h2RepnaRoAzaOlX2C4&usqp=CAU" 
+             alt="Dosa" 
+             class="w-full h-52 object-cover rounded-xl">
+        <h2 class="mt-4 text-xl font-bold text-gray-800">Dosa</h2>
+        <p class="text-gray-600 text-lg">₹80.00</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+        onclick="proceedToPay(80)">Order Now</button>    
+        <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+        onclick="addToCart('Dosa',80 )">Add to Cart</button>
+        <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+              ✔️ Item Added to Cart Successfully
+          </h2>
+      </div>
+
+      <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+              ❌ Item Removed from Cart
+          </h2>
+</div>    </div>
+
+      <!-- Idli -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUkKcWYWkNKU8JLLJicty2rNz-6MlJxieENg&s" 
+             alt="Idli" 
+             class="w-full h-52 object-cover rounded-xl">
+        <h2 class="mt-4 text-xl font-bold text-gray-800">Idli</h2>
+        <p class="text-gray-600 text-lg">₹50.00</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+        onclick="proceedToPay(50)">Order Now</button>  
+        <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+        onclick="addToCart('Idli',50 )">Add to Cart</button>
+        <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+              ✔️ Item Added to Cart Successfully
+          </h2>
+      </div>
+
+      <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+              ❌ Item Removed from Cart
+          </h2>
+</div>    </div>
+
+      <!-- Vada -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://bonmasala.com/wp-content/uploads/2022/12/medu-vada-recipe.webp" 
+             alt="Vada" 
+             class="w-full h-52 object-cover rounded-xl">
+        <h2 class="mt-4 text-xl font-bold text-gray-800">Vada</h2>
+        <p class="text-gray-600 text-lg">₹60.00</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+        onclick="proceedToPay(60)">Order Now</button>     
+        <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+        onclick="addToCart('Vada',60 )">Add to Cart</button>
+        <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+              ✔️ Item Added to Cart Successfully
+          </h2>
+      </div>
+
+      <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+              ❌ Item Removed from Cart
+          </h2>
+</div>    </div>
+
+      <!-- Sambar -->
+      <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/05/sambar.jpg" 
+             alt="Sambar" 
+             class="w-full h-52 object-cover rounded-xl">
+        <h2 class="mt-4 text-xl font-bold text-gray-800">Sambar</h2>
+        <p class="text-gray-600 text-lg">₹70.00</p>
+        <button class="mt-4 bg-red-500 text-white py-2 px-5 rounded-lg hover:bg-orange-400 transition-all" 
+        onclick="proceedToPay(70)">Order Now</button>     
+        <button class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition-all" 
+        onclick="addToCart('Sambar',70 )">Add to Cart</button>
+        <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+              ✔️ Item Added to Cart Successfully
+          </h2>
+      </div>
+
+      <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+          <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+              ❌ Item Removed from Cart
+          </h2>
+</div></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="flex justify-center items-center py-2 bg-red-800 text-white w-full">
+    <div id="last" class="text-center">
+        <img src="Screenshot 2024-07-28 181139.png" class="mx-auto align-center" height="50px" width="100px" alt="Screenshot">
+        <p class="mt-2">The key to more success is to have a lot of pillows. Always remember it's the jungle there's a lot of 'they' in there. After you overcome 'they' you will make it to paradise.</p>
+    </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>

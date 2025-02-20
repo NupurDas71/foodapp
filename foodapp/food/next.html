@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food app</title>
+    <link rel="stylesheet" href="style.css">
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css " rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href=" https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css "  rel="stylesheet">
+
+</head>
+<body>
+   <!-- NAVBAR -->
+   <nav class="bg-yellow-400 fixed w-full shadow-md  flex items-center justify-between px-4 z-50 h-20 py-4">
+        
+        <!-- Logo (Centered) -->
+     
+
+        <!-- Mobile & Desktop Menu -->
+        
+                <!-- Logo (Centered) -->
+             
+        
+                <!-- Mobile & Desktop Menu -->
+                <ul class="flex  justify-between w-full  gap-3">
+                    <div class="flex items-center  w-20 h-10 ">
+
+                    <a href="next.html" class="flex items-center justify-center">
+                        <img src="Screenshot 2025-02-20 105303.png" class=" flex w-20">
+                    </a>
+                       
+                    <!-- Location -->
+                </div>
+                <div class="flex items-center  w-15 h-10 ">
+                    <li><a href="next.html" class=" flex font-bold text-lg  transition-colors duration-300 hover:text-red-500">Home</a> </li></div>
+                    <div class="flex items-center  w-15 h-10 ">
+                        <li><a href="#fooddiv" class=" flex font-bold text-lg  transition-colors duration-300 hover:text-red-500">Food</a></li></div>
+    
+        
+                    <!-- Search Bar -->
+                   <!-- Search Bar -->
+                   <div class="flex items-center bg-white w-50 h-10 rounded-lg shadow-sm border border-gray-300">
+                    <input type="text" id="searchInput" class="w-full h-full p-2 text-sm outline-none bg-transparent placeholder-gray-500 focus:border-pink-500 focus:ring-4 focus:ring-pink-400"
+                        placeholder="Search Food">
+                    <button class="p-2 rounded-full">
+                        <img src="https://cdn1.iconfinder.com/data/icons/jumpicon-basic-ui-glyph-1/32/-_Magnifier-Search-Zoom--1024.png"
+                            class="h-10 w-10 opacity-70 hover:opacity-100">
+                    </button>
+                </div>
+                <script>
+                    document.getElementById("searchInput").addEventListener("input", function() {
+                        let searchValue = this.value.toLowerCase();
+                        let foodItems = document.querySelectorAll(".image-container");
+                    
+                        foodItems.forEach(item => {
+                            let imgAlt = item.querySelector("img").alt.toLowerCase();
+                            if (imgAlt.includes(searchValue)) {
+                                item.style.display = "flex";  // Show matching items
+                            } else {
+                                item.style.display = "none";  // Hide non-matching items
+                            }
+                        });
+                    });
+                    </script>
+                    
+        
+                    <!-- Offers -->
+                 
+                    <!-- Sign In -->
+                    <!-- Sign-In Button in Navbar -->
+        <li class="flex">
+            <button id="openModal" class="flex items-center bg-orange-500 text-black px-1 py-1 rounded-md text-base hover:bg-orange-600 transition duration-300">
+                <img src="https://cdn0.iconfinder.com/data/icons/ecommerce-50/48/icon0006_member-1024.png" class="h-6 w-8">
+                <span class=" ml-2 font-bold text-lg hidden md:inline-block hover:text-red-500 transition-colors duration-300">Sign in</span>
+            </button>
+        </li>
+        
+        <!-- Sign-In Modal -->
+        <!-- Sign-In Modal -->
+        <div id="signInModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
+                <!-- Close Button -->
+                <button id="closeSignIn" class="absolute top-2 right-3 text-pink-500 text-3xl hover:text-red-500 transition duration-300">&times;</button>
+        
+                <h2 class="text-2xl font-bold text-green-800 mb-4 text-center">Sign In</h2>
+                
+                <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded mb-2 focus:border-pink-500 focus:ring focus:ring-pink-200 outline-none" placeholder="Enter email">
+                <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded mb-4 focus:border-pink-500 focus:ring focus:ring-pink-200 outline-none" placeholder="Enter password">
+                
+                <button id="signInBtn" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300">Sign In</button>
+                
+                <p class="mt-3 text-sm text-center">Don't have an account? <a id="signUpLink" href="#" class="text-blue-500 hover:text-blue-700 transition">Sign Up</a></p>
+            </div>
+        </div>
+        
+        
+                    
+        
+                    <!-- Cart -->
+                    <li class="flex items-center">
+                        <a href="ser.html" class="flex items-center  ">
+                            <img src="https://cdn2.iconfinder.com/data/icons/actinia-basic-user-interface/24/archive-delete-1024.png" class="h-6 w-8">
+                            <span class="ml-1 font-bold text-lg  hidden md:inline transition-colors duration-300 hover:text-red-500">Cart</span>
+                        </a>
+                    </li>
+                </ul>
+        
+        </nav>
+               
+        <script>
+            document.getElementById("searchInput").addEventListener("input", function() {
+                let searchValue = this.value.toLowerCase();
+                let foodItems = document.querySelectorAll(".image-container");
+            
+                foodItems.forEach(item => {
+                    let imgAlt = item.querySelector("img").alt.toLowerCase();
+                    if (imgAlt.includes(searchValue)) {
+                        item.style.display = "flex";  // Show matching items
+                    } else {
+                        item.style.display = "none";  // Hide non-matching items
+                    }
+                });
+            });
+            </script>
+            
+
+            <!-- Offers -->
+         
+            <!-- Sign In -->
+            <!-- Sign-In Button in Navbar -->
+<li class="flex">
+    <button id="openModal" class="flex items-center bg-orange-500 text-black px-1 py-1 rounded-md text-base hover:bg-orange-600 transition duration-300">
+        <img src="https://cdn0.iconfinder.com/data/icons/ecommerce-50/48/icon0006_member-1024.png" class="h-6 w-8">
+        <span class=" ml-2 font-bold text-lg hidden md:inline-block hover:text-red-500 transition-colors duration-300">Sign in</span>
+    </button>
+</li>
+
+<!-- Sign-In Modal -->
+<!-- Sign-In Modal -->
+<div id="signInModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
+        <!-- Close Button -->
+        <button id="closeSignIn" class="absolute top-2 right-3 text-pink-500 text-3xl hover:text-red-500 transition duration-300">&times;</button>
+
+        <h2 class="text-2xl font-bold text-green-800 mb-4 text-center">Sign In</h2>
+        
+        <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded mb-2 focus:border-pink-500 focus:ring focus:ring-pink-200 outline-none" placeholder="Enter email">
+        <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded mb-4 focus:border-pink-500 focus:ring focus:ring-pink-200 outline-none" placeholder="Enter password">
+        
+        <button id="signInBtn" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300">Sign In</button>
+        
+        <p class="mt-3 text-sm text-center">Don't have an account? <a id="signUpLink" href="#" class="text-blue-500 hover:text-blue-700 transition">Sign Up</a></p>
+    </div>
+</div>
+
+
+            
+
+            <!-- Cart -->
+            <li class="flex items-center">
+                <a href="ser.html" class="flex items-center  ">
+                    <img src="https://cdn2.iconfinder.com/data/icons/actinia-basic-user-interface/24/archive-delete-1024.png" class="h-6 w-8">
+                    <span class="ml-1 font-bold text-lg  hidden md:inline transition-colors duration-300 hover:text-red-500">Cart</span>
+                </a>
+            </li>
+        </ul>
+
+</nav>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("signInModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeSignIn");
+    const signInBtn = document.getElementById("signInBtn");
+    const signUpLink = document.getElementById("signUpLink");
+
+    // Open modal
+    openModal.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.add("hidden");
+        }
+    });
+
+    // Close modal on "X" button
+    closeModal.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    // Sign-in button (Save login status)
+    signInBtn.addEventListener("click", () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        if (!email || !password) {
+            alert("Please enter both email and password.");
+            return;
+        }
+
+        // Save login status
+        localStorage.setItem("userSignedIn", "true");
+        modal.classList.add("hidden");
+
+        // Change button to "Account"
+        openModal.innerHTML = `<img src="https://cdn0.iconfinder.com/data/icons/ecommerce-50/48/icon0006_member-1024.png" class="h-6 w-6"> <span class="ml-2 font-bold text-lg hidden md:inline-block hover:text-white transition duration-300">Account</span>`;
+    });
+
+    // Sign-up process
+    signUpLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert("Redirecting to Sign-Up Page...");
+        window.location.href = "signup.html";
+    });
+});
+
+
+
+</script>
+
+    <header>
+        <nav id="secondnav">
+            <div id="div1">
+                <p class="font-bold text-lg">What's on your mind</p>
+                <div id="items" class="d-flex flex-row ">
+                    <div id="pureveg " class="image-container " data-name="pure veg" > <a href="purveg.html"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIfw2JYBVawTthFpdAMlwNd1kSzAU4Hmntpg&s" alt="pureveg" /><p>Pure Veg</p></a></div>
+                   
+                    <div id="chinese" class="image-container"> <a href="chinese.html"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdGa_gF6S2edZk1LwPNk380Q9V3-O2wEz8Q&s" alt="chinese" /><p>Chinese</p></a></div>
+                    <div id="biriyani" class="image-container"><a href="biriyani.html"> <img src=" https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="biriyani" /><p> Biriyani</p></a></div>
+                    <div id="momo" class="image-container"><a href="momo.html"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtjBkSjhWbv6scblOO47N_jXwtigwdizOVNw&s" alt="momo" /><p>Momo</p> </a></div>
+                    <div id="burgur" class="image-container"><a href="burger.html"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDcH_MxdsTsK6KMVon-Ybfa2WiT-R70ZjWw&s" alt="burgur"  /><p>Burger</p></a> </div>
+
+                    <div id="ni" class="image-container"><a href="northindian.html"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy-CJUTjI5EqYIoj7-_8ImWCcCRfxLnUFqVg&s" alt="ni"  /><p>North Indian</p></a></div>
+                    <div id="rolls" class="image-container"><a href="roll.html"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlr0ST4xI-WCWr9eH6IogXXlZpJ-KJPxJfqA&s " alt="rolls" /><p>Roll</p></a></div>
+<div id="pizza" class="image-container"><a href="pizza.html"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS87MI4qqBu4zRZwJ0hbEiN5-4WezFeBheuCAASOeTfSmGxuwx7LCjjemgDDmTxUMNfDzQ&usqp=CAU" alt="pizza"   /><p>Pizza</p></a></div>
+                    <div id="si" class="image-container"><a href="southindian.html"> <img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXhzMX0qPZZUOJfJTV5j_ybtuPVEyOolsPzqfCV09XK2uDa-auUF-5fOhAQNyFQPHPmwg&usqp=CAUU" alt="South Indian"   /><p>South Indian</p></a></div>
+                    <div id="pasta" class="image-container"><a href="pasta.html"><img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs2paowiODEqEOJ082fLEWgrlBjvBlGd2GrQ&s " alt="pasta" /><p> Pasta</p></a> </div>
+                    <div id="khichdi" class="image-container"><a href="khichdi.html"> <img src=" https://holycowvegan.net/wp-content/uploads/2021/09/masala-khichdi.jpg " alt="khichdi" /><p>Khichdi</p></a></div>
+                    <div id="icecream" class="image-container"><a href="icecream.html"> <img src=" https://static.toiimg.com/photo/101136807.cms " alt="icecream" /><p>Ice-Cream</p></a></div>
+                  
+ <div id="cakes" class="image-container"><a href="cake.html"><img src=" https://j6e2i8c9.rocketcdn.me/wp-content/uploads/2021/05/Eggless-Black-forest-Pastry-recipe-1.jpg " alt="cakes" /><p>Cakes</p></a> </div>
+<div id="rasgulla" class="image-container"><a href="rasgulla.html" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU6Q0AGtbgbqaD6kN2wpWV3Go2TBRSMXZX4g&s" alt="rasgulla" /><p>Rasgulla</p></a> </div>
+</div></div></nav>
+    </header>
+    <div id="full" class="flex justify-center items-center mt-2 mb-2 w-full ">
+        <img class="w-1/2" src="Business Geometric Template_page-0001.jpg" alt="Centered Image"/>
+    </div>
+    <hr>
+    <div id="fooddiv" class="w-full pl-2 pr-2 mt-5 mb-5 flex flex-wrap justify-content-center align-items-center">
+        <div class="food-item flex flex-col items-center">
+            <img src=" https://img.freepik.com/premium-photo/close-up-steaming-hot-cup-coffee-with-heart-shaped-latte-art-design-top_935552-1520.jpg " alt="Ice Coffee" class="w-36 h-36 object-cover rounded-lg"/>
+            <p class="mt-2 text-center text-lg-xl font-bold"><b>Iced Coffee</b></p>
+
+            <div class="star-rating">
+                <span class="star" data-rating="5">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="1">&#9733;</span>
+            </div>
+
+            <p class="mt-2 mb-3 text-center text-lg">₹80.0-₹180.0</p>
+    <button class="order-button bg-yellow-500 text-white py-2 px-4 rounded" onclick="toggleDetails()">Order Now</button>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <div id="pic-writtendiv" class="flex flex-row p-6 items-center overflow-x-auto">
+                <div id="picinside" class="flex flex-col w-1/2 items-center">
+                    <img src=" https://img.freepik.com/premium-photo/close-up-steaming-hot-cup-coffee-with-heart-shaped-latte-art-design-top_935552-1520.jpg " alt="Iced Coffee" class="flex rounded-lg" />
+
+                    <div id="quantity" class="flex flex-row mt-3 space-x-4">
+                        <button type="button" onclick="updateQuantity(-1)" class="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full" id="decrement">-</button>
+                        <p id="quantitycofee" class="flex">1</p>
+                        <button type="button" onclick="updateQuantity(1)" class="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full" id="increment">+</button>
+                    </div>
+                    
+                </div>
+                <div id="writteninside" class="flex flex-col p-2 w-1/2">
+                    <div class=" title-container flex flex-row h-10 w-full gap-5 items-center text-center justify-center ml-10 pl-2 pr-2">
+                        <h2 class="flex-grow bold-text text-center">Iced Coffee</h2>
+                        <button class="close-btn ml-auto flex items-center justify-center rounded-full bg-yellow-500 text-white px-2 w-10 h-10" onclick="closeOverlay()">X</button>
+                    </div>
+                    <div class="star-rating flex justify-center">
+                        <span class="star" data-rating="5">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="1">&#9733;</span>
+                    </div>
+                    <p>Palientsque habitant morbi trisique senectus et neutus et masesuada fames ac turpiz egestas. Vestibulum tortor quam, feugiat vitae, ultricies agent, tempor sit amet, ante denoe eu libero sit amet quam egestas semper.</p>
+                    <form class="flex items-center pt-4">
+                        <p class="text-grey flex items-center text-lg ">
+                            CoffeeType
+                            <span class="star bg-orange text-xl mr-2">&#9733;</span>
+                            <label class="flex items-center space-x-2 pr-2 custom-radio">
+                                <input type="radio" name="coffee" value="Americano" onclick="updateTotalPrice()" checked>
+                                <span class="text-lg-2xl">Americano</span>
+                            </label>
+                            <label class="flex items-center space-x-2 pr-2 custom-radio">
+                                <input type="radio" name="coffee" value="Cappuccino" onclick="updateTotalPrice()">
+                                <span class="text-lg-2xl">Cappuccino</span>
+                            </label>
+                            <label class="flex items-center space-x-2 pr-2 custom-radio">
+                                <input type="radio" name="coffee" value="Espresso" onclick="updateTotalPrice()">
+                                <span class="text-lg-2xl">Espresso</span>
+                            </label>
+                        </p>
+                    </form>
+                    <form class="flex flex-row items-center mt-3 mb-2 gap-2">
+                        <p class="text-grey flex">Extra Items?
+                            <label class="flex flex-row items-center space-x-2 gap-1">
+                                <input type="radio" name="Extraitem" value="2.06" onclick="updateTotalPrice()" class="form-radio text-blue-600">
+                                <span class="text-black-600 ml-2"><b>Extra Milk + ₹2.06</b></span>
+                            </label>
+                            <label class="flex flex-row items-center space-x-2 gap-1 ml-2">
+                                <input type="radio" name="Extraitem" value="3.00" onclick="updateTotalPrice()" class="form-radio text-blue-600">
+                                <span class="text-black-600"><b>Extra Sugar + ₹3.00</b></span>
+                            </label>
+                        </p>
+                    </form>
+                    
+                    <p class="text-grey align-left mt-2">Special Instructions?</p>
+                    <input type="text" class="border border-gray-300 p-2" placeholder="Add Instructions..">
+                    
+                    <div class="total flex flex-row price-container mt-4 align-center text-center justify-center">
+                        <p class="flex p-6 text-xl">Total Price</p>
+                        <p id="totalPrice" class="flex p-6 text-xl">₹80.00</p>
+                       
+                    </div>
+                    <div class="buttons-container flex flex-row items-center justify-center w-full h-full relative gap-2 ">
+                        <div class="buttons-container flex flex-col items-center relative">
+                            <!-- Add to Cart Button -->
+                            <button class="buttons bg-yellow-500 rounded-lg px-4 py-2 border-0 text-medium hover:bg-yellow-200 transition-all" onclick="addToCart('Iced Coffee',80)">
+                                Add to Cart
+                            </button>
+                    
+                            <!-- Message Positioned Absolutely Below the Button -->
+                            <div id="addtocartdiv" class="hidden absolute top-full mt-2 w-full text-center">
+                                <h2 class="tickmark bg-green-100 text-green-800 border border-green-500 px-4 py-2 rounded-lg">
+                                    ✔️ Item Added to Cart Successfully
+                                </h2>
+                            </div>
+                    
+                            <div id="addtoremove" class="hidden absolute top-full mt-2 w-full text-center">
+                                <h2 class="tickmark bg-red-100 text-red-800 border border-red-500 px-4 py-2 rounded-lg">
+                                    ❌ Item Removed from Cart
+                                </h2>
+                            </div>
+                        </div>
+                    
+                   
+
+ <button class="buttons bg-green-300 rounded-lg px-4 py-2 mr-2 border-0 text-medium hover:bg-green-200 transition-all"><a href="next.html">Buy More</a></button>
+<!-- Proceed to Order Button -->
+<button type="button" class="buttons flex items-center justify-center  bg-red-500 text-white text-medium  rounded-lg  px-4 py-2 mr-2  hover:bg-yellow-200 transition-all" onclick="proceedToPay()">Proceed to Pay</button>
+<script>
+function proceedToPay() {
+    // Get the total price from the #totalPrice element
+    const totalPriceElement = document.getElementById('totalPrice');
+    let totalPrice = totalPriceElement ? totalPriceElement.textContent.replace('₹', '').trim() : '';
+
+    // Check if the total price was successfully extracted
+    if (totalPrice) {
+        // Redirect to the payment page, passing the total price as a query parameter
+        window.location.href = `check.html?totalPrice=${totalPrice}`;
+    } else {
+        alert("Error: Unable to fetch total price. Please try again.");
+    }
+}
+
+</script>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+
+        <div class="food-item mx-2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQusK9y7FsRRN0EuAgimeuugO7JbY6n_wn3Jw&s" alt="Double Classic Burger" class="object-cover rounded-lg"/>
+            <p class="mt-2 text-center text-lg font-bold"><b>Double Classic Burger</b></p>
+            <div class="star-rating">
+                <span class="star " data-rating="5">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="1">&#9733;</span>
+            </div>
+            <p class="mt-2 text-center text-lg">₹100.0-₹150.0</p>
+            <button class="order-button hidden bg-yellow-500 text-white py-2 px-4  rounded">Order Now</button>
+        </div>
+
+<div class="food-item mx-2">
+            <img src=" https://imgmedia.lbb.in/media/2019/07/5d242ad8e93a896e5542da0d_1562651352251.jpg " alt="Pizza" class="object-cover rounded-lg"/>
+            <p class=" mt-2 text-center text-lg font-bold "><b>Pizza</b></p>
+            <div class="star-rating">
+                <span class="star" data-rating="5">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="1">&#9733;</span>
+            </div>
+            <p class="mt-2 text-center text-lg">₹150.00-₹200.00</p>
+            <button class="order-button hidden bg-yellow-500 text-white py-2 px-4 rounded">Order Now</button>
+        </div>
+
+        <div class="food-item mx-2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmoMj74C2e5v3q-zRoGhqf-W2gCiKsktQlKA&s" alt="Ice-Cream" class="object-cover rounded-lg"/>
+            <p class="mt-2 text-center text-lg font-bold"><b>Ice-Cream</b></p>
+            <div class="star-rating">
+                <span class="star" data-rating="5">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="1">&#9733;</span>
+            </div>
+            <p class="mt-2 text-center text-lg">₹50.0-₹100.0</p>
+            <button  class="order-button hidden bg-yellow-500 text-white py-2 px-4 rounded">Order Now</button>
+            <p id="ordertext"></p>
+        </div>
+
+    </div>
+    
+    <footer class="flex justify-center items-center py-2 bg-red-800 text-white w-full">
+        <div id="last" class="text-center">
+            <img src="Screenshot 2024-07-28 181139.png" class="mx-auto align-center" height="50px" width="100px" alt="Screenshot">
+            <p class="mt-2">The key to more success is to have a lot of pillows. Always remember it's the jungle there's a lot of 'they' in there. After you overcome 'they' you will make it to paradise.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
